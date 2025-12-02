@@ -1,0 +1,153 @@
+{
+  "menu": {
+    "starters": [
+      {
+        "name": "Smoked Chicken Wings",
+        "description": "Slow-smoked wings tossed in your choice of BBQ or spicy sauce.",
+        "tags": ["GF"],
+        "price": 7.95
+      },
+      {
+        "name": "Garlic Bread",
+        "description": "Toasted sourdough topped with garlic herb butter.",
+        "tags": ["V"],
+        "price": 4.50
+      },
+      {
+        "name": "Crispy Calamari",
+        "description": "Lightly breaded calamari served with lemon mayo.",
+        "tags": [],
+        "price": 8.25
+      },
+      {
+        "name": "BBQ Jackfruit Bites",
+        "description": "Smoky BBQ jackfruit served with a vegan ranch dip.",
+        "tags": ["VG", "V"],
+        "price": 6.95
+      }
+    ],
+
+    "mains": [
+      {
+        "name": "Ribeye Steak 12oz",
+        "description": "Rich, well-marbled ribeye grilled to your liking.",
+        "tags": ["GF"],
+        "price": 26.95
+      },
+      {
+        "name": "Sirloin Steak 10oz",
+        "description": "Classic sirloin with a bold, beefy flavour.",
+        "tags": ["GF"],
+        "price": 23.50
+      },
+      {
+        "name": "Fillet Steak 8oz",
+        "description": "Lean, tender fillet cut served with garlic butter.",
+        "tags": ["GF"],
+        "price": 29.95
+      },
+      {
+        "name": "T-Bone Steak 16oz",
+        "description": "The best of both worlds — fillet and sirloin together.",
+        "tags": ["GF"],
+        "price": 32.00
+      },
+      {
+        "name": "Flat Iron Steak 8oz",
+        "description": "Tender and flavourful cut, served with chimichurri.",
+        "tags": ["GF"],
+        "price": 18.95
+      },
+      {
+        "name": "Steakhouse Mixed Grill",
+        "description": "Rump steak, sausage, chicken breast, and grilled tomato.",
+        "tags": ["GF"],
+        "price": 27.50
+      }
+    ],
+
+    "desserts": [
+      {
+        "name": "Warm Chocolate Brownie",
+        "description": "Rich brownie served with vanilla ice cream.",
+        "tags": ["V"],
+        "price": 6.50
+      },
+      {
+        "name": "New York Cheesecake",
+        "description": "Creamy baked cheesecake with berry compote.",
+        "tags": ["V"],
+        "price": 6.95
+      },
+      {
+        "name": "Sticky Toffee Pudding",
+        "description": "Warm sponge pudding with toffee sauce and custard.",
+        "tags": ["V"],
+        "price": 6.75
+      }
+    ],
+
+    "drinks": [
+      {
+        "name": "Coca-Cola",
+        "description": "Classic chilled Coke.",
+        "tags": [],
+        "price": 2.95
+      },
+      {
+        "name": "Diet Coke",
+        "description": "Sugar-free cola.",
+        "tags": [],
+        "price": 2.80
+      },
+      {
+        "name": "Sparkling Water",
+        "description": "Refreshing sparkling mineral water.",
+        "tags": ["GF", "VG", "V"],
+        "price": 2.50
+      },
+      {
+        "name": "Still Water",
+        "description": "Pure still mineral water.",
+        "tags": ["GF", "VG", "V"],
+        "price": 2.50
+      },
+      {
+        "name": "Fresh Orange Juice",
+        "description": "Freshly squeezed orange juice.",
+        "tags": ["GF", "VG", "V"],
+        "price": 3.50
+      },
+      {
+        "name": "Apple Juice",
+        "description": "Cold-pressed apple juice.",
+        "tags": ["GF", "VG", "V"],
+        "price": 3.30
+      },
+      {
+        "name": "House Red Wine (175ml)",
+        "description": "Smooth and full-bodied red wine.",
+        "tags": ["GF", "VG", "V"],
+        "price": 5.95
+      },
+      {
+        "name": "House White Wine (175ml)",
+        "description": "Crisp and refreshing white wine.",
+        "tags": ["GF", "VG", "V"],
+        "price": 5.95
+      },
+      {
+        "name": "Draft Lager Pint",
+        "description": "Crisp and cold draft lager.",
+        "tags": [],
+        "price": 4.90
+      },
+      {
+        "name": "IPA Pint",
+        "description": "Hoppy and aromatic IPA.",
+        "tags": [],
+        "price": 5.20
+      }
+    ]
+  }
+}

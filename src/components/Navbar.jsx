@@ -1,3 +1,9 @@
+import { Link } from 'react-router-dom';
+import HomePage from '../pages/HomePage';
+import MenuPage from '../pages/MenuPage';
+import ContactPage from '../pages/ContactPage';
+
+
 function Navbar() {
   return (
     <nav className="w-full fixed top-0 left-0 z-50 transition-all duration-500
@@ -15,9 +21,9 @@ function Navbar() {
 
         {/* LINKS */}
         <ul className="flex items-center gap-8 text-lg">
-          <li className="hover:text-red-500 cursor-pointer">About</li>
-          <li className="hover:text-red-500 cursor-pointer">Menu</li>
-          <li className="hover:text-red-500 cursor-pointer">Contact</li>
+          <li><Link to={'/'} className="hover:text-red-500 cursor-pointer">Home</Link></li>
+          <li><Link to={'/menu'} className="hover:text-red-500 cursor-pointer">Menu</Link></li>
+          <li><Link to={'/contact'} className="hover:text-red-500 cursor-pointer">Contact</Link></li>
 
           {/* BOOK NOW BUTTON */}
           <li>
