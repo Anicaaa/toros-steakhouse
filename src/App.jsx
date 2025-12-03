@@ -2,6 +2,7 @@ import Navbar from './components/Navbar.jsx';
 import HomePage from './pages/HomePage.jsx';
 import MenuPage from './pages/MenuPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
+import BookingPage from './pages/BookingPage.jsx';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/' element={<HomePage />} />
           <Route path='/menu' element={<MenuPage />} />
           <Route path='/contact' element={<ContactPage />} />
+          <Route path='/booking' element={<BookingPage />} />
         </Routes>
         </div>
       </BrowserRouter>
