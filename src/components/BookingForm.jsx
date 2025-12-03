@@ -12,7 +12,11 @@ export default function BookingForm() {
     notes: "",
   });
 
-  const [message, setMessage] = useState("");
+  const [popup, setPopup] = useState({
+    show: false,
+    type: "",
+    message: "",
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,7 +25,6 @@ export default function BookingForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage("");
 
     try {
       const res = await fetch("http://localhost:4000/api/bookings", {
@@ -32,100 +35,178 @@ export default function BookingForm() {
 
       const data = await res.json();
 
-      if (!res.ok) {
-        setMessage(`Error: ${data.error}`);
-      } else {
-        setMessage(`Booking created! ID: ${data.booking.id}`);
-        // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          guestNumber: 1,
-          date: "",
-          startTime: "",
-          endTime: "",
-          notes: "",
-        });
+      if (res.status === 409) {
+      setPopup({
+        show: true,
+        type: "unavailable",
+        message: "This time slot is already booked.",
+      });
+      return;
       }
+
+      if (!res.ok) {
+      setPopup({
+        show: true,
+        type: "error",
+        message: data.error || "Something went wrong.",
+      });
+        return;
+      }
+
+      setPopup({
+        show: true,
+        type: "success",
+        message: `Thank you for booking! Your reservation ID is ${data.booking.id}.`,
+      });
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        guestNumber: 1,
+        date: "",
+        startTime: "",
+        endTime: "",
+        notes: "",
+      });
+
     } catch (err) {
-      setMessage("Server error: " + err.message);
+      setPopup({
+        show: true,
+        type: "error",
+        message: "Server error: " + err.message,
+      });
     }
   };
 
   return (
-    <div>
-      <h2>Create a Booking</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <input
-          type="email"
-          name="email"
-          placeholder="Email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="text"
-          name="phone"
-          placeholder="Phone"
-          value={formData.phone}
-          onChange={handleChange}
-        />
-        <br />
-        <input
-          type="number"
-          name="guestNumber"
-          placeholder="Guests"
-          min="1"
-          value={formData.guestNumber}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <input
-          type="date"
-          name="date"
-          value={formData.date}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <input
-          type="time"
-          name="startTime"
-          value={formData.startTime}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <input
-          type="time"
-          name="endTime"
-          value={formData.endTime}
-          onChange={handleChange}
-          required
-        />
-        <br />
-        <textarea
-          name="notes"
-          placeholder="Notes"
-          value={formData.notes}
-          onChange={handleChange}
-        />
-        <br />
-        <button type="submit">Book</button>
-      </form>
-      {message && <p>{message}</p>}
-    </div>
+    <>
+      <div className={`w-full flex justify-center mt-24 transition-all duration-300 
+        ${popup.show ? "blur-sm brightness-75 pointer-events-none" : ""}`}
+      >
+        <div className="shadow-xl rounded-2xl p-6 bg-white w-[500px]">
+          <h1 className="text-3xl font-bold mb-4 text-center">Book a Table</h1>
+
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              className="border border-gray-300 rounded-md px-3 py-2 text-sm"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              className="border border-gray-300 rounded-md px-3 py-2 text-sm"
+              value={formData.email}
+              onChange={handleChange}
+            />
+
+            <input
+              type="text"
+              name="phone"
+              placeholder="Phone"
+              className="border border-gray-300 rounded-md px-3 py-2 text-sm"
+              value={formData.phone}
+              onChange={handleChange}
+            />
+
+            <input
+              type="number"
+              name="guestNumber"
+              placeholder="Guests"
+              min="1"
+              className="border border-gray-300 rounded-md px-3 py-2 text-sm"
+              value={formData.guestNumber}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="date"
+              name="date"
+              className="border border-gray-300 rounded-md px-3 py-2 text-sm"
+              value={formData.date}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="time"
+              name="startTime"
+              className="border border-gray-300 rounded-md px-3 py-2 text-sm"
+              value={formData.startTime}
+              onChange={handleChange}
+              required
+            />
+
+            <input
+              type="time"
+              name="endTime"
+              className="border border-gray-300 rounded-md px-3 py-2 text-sm"
+              value={formData.endTime}
+              onChange={handleChange}
+              required
+            />
+
+            <textarea
+              name="notes"
+              placeholder="Notes (optional)"
+              className="border border-gray-300 rounded-md px-3 py-2 text-sm min-h-[60px]"
+              value={formData.notes}
+              onChange={handleChange}
+            ></textarea>
+
+            <button
+              type="submit"
+              className="bg-red-700 text-white py-2 rounded-md font-semibold hover:bg-red-800"
+            >
+              Book Now
+            </button>
+          </form>
+        </div>
+      </div>
+
+      {popup.show && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50">
+          <div className="bg-white shadow-2xl rounded-2xl max-w-md w-full p-6 relative">
+
+            <button
+              onClick={() => setPopup({ ...popup, show: false })}
+              className="absolute top-3 right-3 text-2xl font-bold text-gray-600 hover:text-black"
+            >
+              ×
+            </button>
+
+            <h2 className={`text-2xl font-bold text-center mb-4 
+              ${popup.type === "success" ? "text-green-700" : ""}
+              ${popup.type === "error" ? "text-red-700" : ""}
+              ${popup.type === "unavailable" ? "text-orange-600" : ""}`}
+            >
+              {popup.type === "success" && "Booking Confirmed!"}
+              {popup.type === "error" && "Something Went Wrong"}
+              {popup.type === "unavailable" && "Unavailable"}
+            </h2>
+
+            <p className="text-center text-gray-700 mb-4">{popup.message}</p>
+
+            <div className="flex justify-center">
+              <button
+                onClick={() => setPopup({ ...popup, show: false })}
+                className="bg-red-700 text-white px-6 py-2 rounded-md hover:bg-red-800"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

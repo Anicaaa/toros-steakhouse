@@ -7,7 +7,6 @@ export default function MenuPage() {
   const [selectedCategory, setSelectedCategory] = useState("starters");
 
   useEffect(() => {
-    // Fetch menu data from local JSON file
     fetch("/menu.json")
       .then((response) => response.json())
       .then((data) => setMenuData(data.menu))
@@ -35,11 +34,6 @@ export default function MenuPage() {
           </button>
         ))}
       </div>
-
-      {/* Layout: Left images, Right menu boxes */}
-      <div className="flex flex-col lg:flex-row w-full max-w-7xl gap-8">
-
-        {/* Menu Boxes - Right */}
         <div className="flex-1 flex justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 justify-items-center">
             {menuData[selectedCategory].map((item, i) => (
@@ -47,7 +41,6 @@ export default function MenuPage() {
             ))}
           </div>
         </div>
-      </div>
     </div>
   );
 }

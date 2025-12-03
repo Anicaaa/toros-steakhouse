@@ -19,14 +19,14 @@ function Hero() {
         <div className="flex justify-center gap-4">
           <button
             onClick={() => navigate("/booking")}
-            className="bg-red-700 hover:bg-red-700 text-white px-6 py-3 rounded-sm font-semibold tracking-wide"
+            className="bg-red-700 hover:bg-red-800 text-white px-6 py-3 rounded-sm font-semibold tracking-wide"
           >
             Book Now
           </button>
 
           <button
             onClick={() => navigate("/menu")}
-            className="bg-white text-black px-6 py-3 rounded-sm font-semibold tracking-wide border border-black"
+            className="bg-white hover:bg-neutral-300 text-black px-6 py-3 rounded-sm font-semibold tracking-wide border border-black"
           >
             View Menu
           </button>
