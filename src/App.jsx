@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage.jsx';
 import MenuPage from './pages/MenuPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import BookingPage from './pages/BookingPage.jsx';
+import Footer from './components/Footer.jsx';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -21,6 +22,7 @@ function App() {
           <Route path='/contact' element={<ContactPage />} />
           <Route path='/booking' element={<BookingPage />} />
         </Routes>
+        <Footer />
         </div>
       </BrowserRouter>
   )
