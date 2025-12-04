@@ -27,7 +27,7 @@ export default function BookingForm() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:4000/api/bookings", {
+      const res = await fetch("https://toros-steakhouse-server.onrender.com/api/bookings", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
