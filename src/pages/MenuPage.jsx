@@ -14,7 +14,7 @@ export default function MenuPage() {
   }, []);
 
   if (!menuData) {
-    return <div>Loading menu...</div>;
+    return <div className="flex justify-center pt-100 pb-100 font-bold text-2xl">Loading menu...</div>;
   }
 
   return (
