@@ -25,7 +25,7 @@ function About() {
             <p className="text-lg leading-relaxed">
               Founded in <span className="font-semibold">1998</span>, Toro’s Steakhouse has always been a{" "}
               <span className="font-semibold">family-owned</span> restaurant.
-              Built with love by Katia and Jack, the
+              Built with love, the
               restaurant quickly became a warm place for locals and travellers.
               <br />
               <br />

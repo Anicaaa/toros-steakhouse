@@ -49,7 +49,6 @@ export default function ContactPage() {
       });
 
       setFormData({ name: "", email: "", phone: "", message: "" });
-
     } catch (err) {
       setPopup({
         show: true,
@@ -61,26 +60,22 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Page Background */}
       <section
         className="w-full bg-cover bg-center bg-fixed"
         style={{ backgroundImage: `url('/white-wood.jpg')` }}
       >
         <div className="bg-black/50 w-full h-full py-16">
 
-          {/* FORM + MAP WRAPPER */}
-          <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-center gap-10">
+          <div className="max-w-6xl mx-auto mt-20 px-6 flex flex-col md:flex-row items-start justify-center gap-10">
 
-            {/* Content blurred when popup shows */}
-            <div className={`w-full flex justify-center mt-24 transition-all duration-300
+            <div className={`w-full md:w-1/2 h-[500px] transition-all duration-300
               ${popup.show ? "blur-sm brightness-75 pointer-events-none" : ""}
             `}>
-              <div className="shadow-xl rounded-2xl p-6 bg-white md:w-1/2">
-
-                <h1 className="text-3xl font-bold mb-4 text-center">Contact Us</h1>
+              <div className="shadow-xl rounded-2xl p-6 bg-white h-full">
+                <h1 className="text-3xl font-bold mb-10 text-center">Contact Us</h1>
 
                 <form className="flex flex-col gap-6" onSubmit={handleSubmit}>
-                  
+
                   <input
                     type="text"
                     name="name"
@@ -120,25 +115,25 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="bg-red-700 text-white py-2 rounded-md font-semibold hover:bg-red-800"
+                    className="bg-red-700 text-white py-2 mt-10 rounded-md font-semibold hover:bg-red-800"
                   >
                     Send Message
                   </button>
                 </form>
               </div>
-
-              {/* MAP */}
-              <div className="w-full md:w-1/2 h-[500px] rounded-2xl overflow-hidden shadow-xl ml-6">
-                <iframe
-                  title="Toro's Steakhouse Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.123456!2d-0.123456!3d51.123456"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  loading="lazy"
-                ></iframe>
-              </div>
             </div>
+
+            <div className="w-full md:w-1/2 h-[500px] rounded-2xl overflow-hidden shadow-xl md:ml-6 mt-6 md:mt-0">
+              <iframe
+                title="Toro's Steakhouse Location"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d84935.7823418632!2d-0.073756605718167!3d51.55371582339508!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon!5e0!3m2!1sen!2suk!4v1764851406878!5m2!1sen!2suk"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+              ></iframe>
+            </div>
+
           </div>
         </div>
       </section>

@@ -16,15 +16,18 @@ function Footer() {
         </div>
 
         <div>
+          <h3 className="text-xl font-semibold mb-3">Contact</h3>
+          <p className="text-gray-300">Phone: +44 1234 567890</p>
+        </div>
+
+        <div>
           <h3 className="text-xl font-semibold mb-3">Opening Times</h3>
           <p className="text-gray-300">Monday – Sunday</p>
           <p className="text-gray-300">17:00 – 23:30</p>
         </div>
-
-        <div>
-          <h3 className="text-xl font-semibold mb-3">Contact</h3>
-          <p className="text-gray-300">Phone: +44 1234 567890</p>
-
+        
+      </div>
+      <div className="flex justify-center">
           <div className="flex gap-4 mt-4">
             <a
               href="#"
@@ -47,8 +50,7 @@ function Footer() {
               <i className="fab fa-linkedin"></i>
             </a>
           </div>
-        </div>
-      </div>
+          </div>
 
       <div className="text-center text-gray-400 mt-10 text-sm">
         © {new Date().getFullYear()} Toro’s Steakhouse - All Rights Reserved
