@@ -11,7 +11,7 @@ function Hero() {
       <div className="max-w-xl bg-black/60 p-8 sm:mx-auto mx-4 text-center rounded-md text-white">
         <h2 className="text-4xl font-bold mb-4">Welcome to Toro's Steakhouse</h2>
         <p className="text-lg leading-relaxed mb-6">
-          Open & smokin' 7 days a week.<br />
+          Open Everyday<br />
           Discover the bold flavours & warm hospitality in our<br />
           family-friendly restaurant.
         </p>
