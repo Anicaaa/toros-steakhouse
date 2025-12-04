@@ -80,6 +80,16 @@ export default function BookingForm() {
   };
 
   return (
+     <section
+      className="w-full bg-cover bg-center bg-fixed"
+      style={{
+        backgroundImage: `url('/white-wood.jpg')`,
+      }}
+    >
+      <div className="bg-black/50 w-full h-full py-16">
+      <div className="max-w-6xl mx-auto px-6 
+          flex flex-col md:flex-row 
+          items-center justify-center gap-10">
     <>
       <div className={`w-full flex justify-center mt-24 transition-all duration-300 
         ${popup.show ? "blur-sm brightness-75 pointer-events-none" : ""}`}
@@ -208,5 +218,8 @@ export default function BookingForm() {
         </div>
       )}
     </>
+    </div>
+    </div>
+    </section>
   );
 }

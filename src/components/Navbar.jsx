@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 function Navbar() {
   const navigate = useNavigate();
 
-  const baseClasses = "hover:border-b-2 border-white cursor-pointer pb-1";
+  const baseClasses = "hover:text-black border-white cursor-pointer pb-1";
   const activeClasses = "border-b-2 border-white";
 
   return (
@@ -17,7 +17,7 @@ function Navbar() {
                     hover:via-red-700/40 
                     hover:to-red-600/0">
 
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 text-white">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4 text-white font-semibold">
         
         {/* LOGO */}
         <h1 className="text-2xl font-bold tracking-wide">TORO'S STEAKHOUSE</h1>
@@ -33,7 +33,7 @@ function Navbar() {
                 `${baseClasses} ${isActive ? activeClasses : ""}`
               }
             >
-              Home
+              HOME
             </NavLink>
           </li>
 
@@ -45,7 +45,7 @@ function Navbar() {
                 `${baseClasses} ${isActive ? activeClasses : ""}`
               }
             >
-              Menu
+              MENU
             </NavLink>
           </li>
 
@@ -57,7 +57,7 @@ function Navbar() {
                 `${baseClasses} ${isActive ? activeClasses : ""}`
               }
             >
-              Contact
+              CONTACT
             </NavLink>
           </li>
 
