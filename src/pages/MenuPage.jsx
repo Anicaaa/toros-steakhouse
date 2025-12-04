@@ -18,7 +18,7 @@ export default function MenuPage() {
   }
 
   return (
-    <div className="w-full flex flex-col items-center p-6 gap-8 mt-50">
+    <div className="w-full flex flex-col items-center p-6 gap-8 mt-30 mb-10">
 
       {/* Secondary Navbar */}
       <div className="flex gap-6 text-lg font-semibold">
