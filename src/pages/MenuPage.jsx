@@ -20,8 +20,7 @@ export default function MenuPage() {
   return (
     <div className="w-full flex flex-col items-center p-6 gap-8 mt-30 mb-10">
 
-      {/* Secondary Navbar */}
-      <div className="flex gap-6 text-lg font-semibold">
+      <div className="flex gap-4 text-lg font-semibold">
         {["starters", "mains", "desserts", "drinks"].map((cat) => (
           <button
             key={cat}
@@ -33,6 +32,11 @@ export default function MenuPage() {
             {cat.charAt(0).toUpperCase() + cat.slice(1)}
           </button>
         ))}
+      </div>
+      <div className="text-sm text-gray-600">
+        <span className="mr-4"><strong>VG</strong>: Vegan</span>
+        <span className="mr-4"><strong>V</strong>: Vegetarian</span>
+        <span><strong>GF</strong>: Gluten-Free</span>
       </div>
         <div className="flex-1 flex justify-center">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 justify-items-center">

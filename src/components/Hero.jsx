@@ -26,7 +26,7 @@ function Hero() {
 
           <button
             onClick={() => navigate("/menu")}
-            className="bg-white hover:bg-neutral-300 text-black px-6 py-3 rounded-sm font-semibold tracking-wide border border-black"
+            className="bg-white hover:bg-neutral-300 text-black px-6 py-3 rounded-sm font-semibold tracking-wide"
           >
             View Menu
           </button>

@@ -21,44 +21,28 @@ export default function ContactPage() {
     });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = (e) => {
+  e.preventDefault();
 
-    const API_URL = import.meta.env.VITE_API_URL || "https://toros-steakhouse-server.onrender.com";
+  const { name, email, phone, message } = formData;
 
-    try {
-      const res = await fetch(`${API_URL}/api/contact`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+  if (!name || !email || !message) {
+    setPopup({
+      show: true,
+      type: "error",
+      message: "Please fill in all required fields!",
+    });
+    return;
+  }
 
-      const data = await res.json();
+  setPopup({
+    show: true,
+    type: "success",
+    message: "Your message has been sent successfully!",
+  });
 
-      if (!res.ok) {
-        setPopup({
-          show: true,
-          type: "error",
-          message: data.error || "Something went wrong.",
-        });
-        return;
-      }
-
-      setPopup({
-        show: true,
-        type: "success",
-        message: "Your message has been sent successfully!",
-      });
-
-      setFormData({ name: "", email: "", phone: "", message: "" });
-    } catch (err) {
-      setPopup({
-        show: true,
-        type: "error",
-        message: "Server error: " + err.message,
-      });
-    }
-  };
+  setFormData({ name: "", email: "", phone: "", message: "" });
+};
 
   return (
     <>
@@ -143,7 +127,7 @@ export default function ContactPage() {
       {/* POPUP */}
       {popup.show && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50">
-          <div className="bg-white shadow-2xl rounded-2xl max-w-md w-full p-6 relative">
+          <div className="bg-white shadow-2xl rounded-2xl max-w-md mx-4 w-full p-6 relative">
 
             <button
               onClick={() => setPopup({ ...popup, show: false })}
