@@ -5,10 +5,9 @@ export default function BookingForm() {
     name: "",
     email: "",
     phone: "",
-    guestNumber: 1,
+    guestNumber: "",
     date: "",
     startTime: "",
-    endTime: "",
     notes: "",
   });
 
@@ -58,7 +57,7 @@ export default function BookingForm() {
       setPopup({
         show: true,
         type: "success",
-        message: `Thank you for booking! Your reservation ID is ${data.booking.id}.`,
+        message: `Thank you for booking!`,
       });
 
       setFormData({
@@ -68,7 +67,6 @@ export default function BookingForm() {
         guestNumber: 1,
         date: "",
         startTime: "",
-        endTime: "",
         notes: "",
       });
 
@@ -132,7 +130,7 @@ export default function BookingForm() {
             <input
               type="number"
               name="guestNumber"
-              placeholder="Guests"
+              placeholder="Number of Guests"
               min="1"
               className="border border-gray-300 rounded-md px-3 py-2 text-sm"
               value={formData.guestNumber}
@@ -154,15 +152,6 @@ export default function BookingForm() {
               name="startTime"
               className="border border-gray-300 rounded-md px-3 py-2 text-sm"
               value={formData.startTime}
-              onChange={handleChange}
-              required
-            />
-
-            <input
-              type="time"
-              name="endTime"
-              className="border border-gray-300 rounded-md px-3 py-2 text-sm"
-              value={formData.endTime}
               onChange={handleChange}
               required
             />
