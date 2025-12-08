@@ -5,7 +5,7 @@ export default function BookingForm() {
     name: "",
     email: "",
     phone: "",
-    guestNumber: 1,
+    guestNumber: "",
     date: "",
     startTime: "",
     notes: "",
