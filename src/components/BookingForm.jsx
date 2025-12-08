@@ -16,6 +16,7 @@ export default function BookingForm() {
     type: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,6 +25,7 @@ export default function BookingForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const API_URL = import.meta.env.VITE_API_URL || "https://toros-steakhouse-server.onrender.com";
 
@@ -42,6 +44,7 @@ export default function BookingForm() {
         type: "unavailable",
         message: "This time slot is already booked.",
       });
+      setLoading(false);
       return;
       }
 
@@ -51,6 +54,7 @@ export default function BookingForm() {
         type: "error",
         message: data.error || "Something went wrong.",
       });
+        setLoading(false);
         return;
       }
 
@@ -76,6 +80,8 @@ export default function BookingForm() {
         type: "error",
         message: "Server error: " + err.message,
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -164,11 +170,11 @@ export default function BookingForm() {
               onChange={handleChange}
             ></textarea>
 
-            <button
+            <button disabled={loading}
               type="submit"
               className="bg-red-700 text-white py-2 rounded-md font-semibold hover:bg-red-800"
             >
-              Book Now
+              {loading ? "Booking..." : "Book Now"}
             </button>
           </form>
         </div>

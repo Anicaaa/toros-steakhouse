@@ -84,6 +84,12 @@
         "description": "Warm sponge pudding with toffee sauce and custard.",
         "tags": ["V"],
         "price": 6.75
+      },
+      {
+        "name": "Ice Cream Sundae",
+        "description": "Selection of ice creams flavours with chocolate sauce and nuts.",
+        "tags": ["V"],
+        "price": 5.75
       }
     ],
 
