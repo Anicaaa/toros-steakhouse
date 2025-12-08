@@ -83,7 +83,7 @@ export default function BookingForm() {
      <section
       className="w-full bg-cover bg-center bg-fixed"
       style={{
-        backgroundImage: `url('/white-wood.jpg')`,
+        backgroundImage: `url('/white-wood.avif')`,
       }}
     >
       <div className="bg-black/50 w-full h-full py-16">
