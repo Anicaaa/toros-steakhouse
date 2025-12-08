@@ -1,5 +1,5 @@
 export default function Carousel() {
-  const images = ["/image1.jpg", "/image2.jpg", "/image3.jpg"];
+  const images = ["/image1.avif", "/image2.avif", "/image3.avif"];
 
   return (
     <div className="w-full py-8 px-4 mt-20 mb-20">

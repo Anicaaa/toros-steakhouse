@@ -6,7 +6,7 @@ function Hero() {
   return (
     <header
       className="w-full h-screen bg-cover bg-center flex items-center justify-end"
-      style={{ backgroundImage: `url('/steakhousetwo.jpg')` }}
+      style={{ backgroundImage: `url('/steakhousetwo.avif')` }}
     >
       <div className="max-w-xl bg-black/60 p-8 sm:mx-auto mx-4 text-center rounded-md text-white">
         <h2 className="text-4xl font-bold mb-4">Welcome to Toro's Steakhouse</h2>
